@@ -1,0 +1,25 @@
+{
+  "name": "sse-worker-mcp",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy --minify",
+    "start": "wrangler dev",
+    "cf-typegen": "wrangler types --env-interface CloudflareBindings",
+    "type-check": "tsc --noEmit",
+    "test": "vitest run",
+    "test:unit": "TEST_TYPE=unit vitest run",
+    "test:integration": "TEST_TYPE=integration vitest run"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.16.0",
+    "agents": "^0.0.109",
+    "hono": "^4.7.11",
+    "zod": "^3.25.1"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20250724.0",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.4",
+    "wrangler": "^4.4.0"
+  }
+}
