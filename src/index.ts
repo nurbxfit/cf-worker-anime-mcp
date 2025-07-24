@@ -11,3 +11,6 @@ app.mount('/sse', ServerMCP.serveSSE('/sse').fetch, { replaceRequest: false })
 app.mount('/mcp', ServerMCP.serve('/mcp').fetch, { replaceRequest: false })
 
 export default app
+export {
+  ServerMCP
+};

@@ -2,13 +2,29 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "sse-worker-mcp",
   "main": "src/index.ts",
-  "compatibility_date": "2025-07-24"
-  // "compatibility_flags": [
-  //   "nodejs_compat"
-  // ],
-  // "vars": {
-  //   "MY_VAR": "my-variable"
-  // },
+  "compatibility_date": "2025-07-24",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "vars": {
+    "MYANIMELIST_API": "https://api.jikan.moe/v4"
+  },
+  "migrations": [
+    {
+      "new_sqlite_classes": [
+        "ServerMCP"
+      ],
+      "tag": "v1"
+    }
+  ],
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "MCP_OBJECT",
+        "class_name": "ServerMCP",
+      }
+    ]
+  },
   // "kv_namespaces": [
   //   {
   //     "binding": "MY_KV_NAMESPACE",
@@ -31,8 +47,8 @@
   // "ai": {
   //   "binding": "AI"
   // },
-  // "observability": {
-  //   "enabled": true,
-  //   "head_sampling_rate": 1
-  // }
+  "observability": {
+    "enabled": true,
+    // "head_sampling_rate": 1
+  }
 }
