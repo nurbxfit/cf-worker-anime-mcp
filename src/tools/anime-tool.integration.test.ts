@@ -12,7 +12,7 @@ describe('AnimeTool.getTopAnimeList Integration', () => {
         const query = { limit: 10 };
         const response = await animeTool.getTopAnimeList(query);
 
-        console.log('result:', response);
+        // console.log('result:', response);
 
         expect(response.content[0].text).toContain('mal_id');
     })
