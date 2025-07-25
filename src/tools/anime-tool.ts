@@ -33,5 +33,5 @@ class AnimeTool {
 
 export default AnimeTool;
 
-export const animeTool = new AnimeTool(new JikanMoeService(new HttpClient('https://api.jikan.moe/v4')));
+// export const animeTool = new AnimeTool(new JikanMoeService(new HttpClient('https://api.jikan.moe/v4')));
 

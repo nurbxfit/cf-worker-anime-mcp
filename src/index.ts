@@ -1,7 +1,8 @@
 import { Hono } from 'hono'
 import ServerMCP from './server'
+import { Env } from './types/env'
 
-const app = new Hono()
+const app = new Hono<{ Bindings: Env }>()
 
 app.get('/', (c) => {
   return c.text('Hello Hono!')
