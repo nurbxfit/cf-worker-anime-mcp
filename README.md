@@ -49,12 +49,13 @@ To use this server with claude, you can add the following configuration to claud
 ```json
 {
     "mcpServers": {
-       "myanime-list": {
+        "myanime-list": {
             "type": "http",
+            "url": "https://jikan-anime-worker-mcp.nurbxfit.workers.dev/mcp",
             "command": "npx",
             "args": [
                 "mcp-remote",
-                "http://localhost:8787/mcp"
+                "https://jikan-anime-worker-mcp.nurbxfit.workers.dev/mcp"
             ]
         }
     }
