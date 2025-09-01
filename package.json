@@ -1,5 +1,5 @@
 {
-  "name": "sse-worker-mcp",
+  "name": "jikan-anime-worker-mcp",
   "scripts": {
     "dev": "wrangler dev",
     "deploy": "wrangler deploy --minify",

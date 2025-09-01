@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "sse-worker-mcp",
+  "name": "jikan-anime-worker-mcp",
   "main": "src/index.ts",
   "compatibility_date": "2025-07-24",
   "compatibility_flags": [

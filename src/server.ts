@@ -7,7 +7,7 @@ import HttpClient from "./utils/http-client";
 
 class ServerMCP extends McpAgent {
     server = new McpServer({
-        name: 'sse-worker-mcp',
+        name: 'jikan-anime-worker-mcp',
         version: '1.0.0',
     })
 
