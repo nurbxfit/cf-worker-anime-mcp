@@ -88,3 +88,6 @@ wrangler secret put GITHUB_CLIENT_ID
 wrangler secret put GITHUB_CLIENT_SECRET
 wrangler secret put COOKIE_ENCRYPTION_KEY
 ```
+
+## Callback url
+example: https://your-server-url.com/callback
