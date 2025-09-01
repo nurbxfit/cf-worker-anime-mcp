@@ -4,6 +4,7 @@ import { z } from 'zod';
 import AnimeTool from "./tools/anime-tool";
 import JikanMoeService from "./services/jikan-service";
 import HttpClient from "./utils/http-client";
+import { Octokit } from "octokit";
 
 class ServerMCP extends McpAgent {
     server = new McpServer({
@@ -27,6 +28,24 @@ class ServerMCP extends McpAgent {
             },
             (args) => animeTool.getTopAnimeList(args)
         )
+
+        // Use the upstream access token to facilitate tools
+        this.server.tool(
+            "userInfoOctokit",
+            "Get user info from GitHub, via Octokit",
+            {},
+            async () => {
+                const octokit = new Octokit({ auth: this.props.accessToken });
+                return {
+                    content: [
+                        {
+                            text: JSON.stringify(await octokit.rest.users.getAuthenticated()),
+                            type: "text",
+                        },
+                    ],
+                };
+            },
+        );
     }
 }
 
