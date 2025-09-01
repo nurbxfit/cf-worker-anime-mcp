@@ -61,3 +61,30 @@ To use this server with claude, you can add the following configuration to claud
     }
 }
 ```
+# Self Deployment Setup 
+
+## For Auth
+For authorization with Github Oauth in your own deployment, you need to do the followings:
+- Create a Github OAuth App
+- Set the callback URL to your server's URL
+- Add the client ID and client secret to your environment variables
+
+## Create Github OAuth App
+1. Click on your github profile avatar
+2. Go to Settings
+3. Scroll down to Developer settings
+4. Click on OAuth Apps
+5. Click on New OAuth App
+6. Fill in the required fields
+7. Set the callback URL to your server's URL
+8. Click on Register application
+
+## Add Environment Variables
+For this you need to use cloudflare secret to securely store the information.
+use the followings wrangler commands:
+
+```bash
+wrangler secret put GITHUB_CLIENT_ID
+wrangler secret put GITHUB_CLIENT_SECRET
+wrangler secret put COOKIE_ENCRYPTION_KEY
+```
