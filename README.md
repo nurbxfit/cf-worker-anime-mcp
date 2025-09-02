@@ -9,6 +9,18 @@ This repository provides a simple implementation of a MCP server using [Hono](ht
 - **Easy Deployment:** Ready for Cloudflare Workers.
 - **Local Development:** Run locally with Wrangler.
 
+
+## Screenshots
+
+### Input Question
+![Input Question](./screenshots/input-question.png)
+
+### Output Result
+![Output Result](./screenshots/output-result.png)
+
+### MCP Request / Response
+![MCP Request Response](./screenshots/mcp-request-response.png)
+
 ## Getting Started
 
 ### 1. Install Dependencies
