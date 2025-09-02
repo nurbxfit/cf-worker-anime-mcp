@@ -1,11 +1,11 @@
 # SSE & Streamable HTTP MCP Server Example for Cloudflare Workers
 
-This repository provides a simple implementation of a Server-Sent Events (SSE) and streamable HTTP MCP server using [Hono](https://hono.dev/) as the framework for Cloudflare Workers. You can deploy this server to Cloudflare Workers or run it locally for development and testing.
+This repository provides a simple implementation of a MCP server using [Hono](https://hono.dev/) as the framework for Cloudflare Workers. You can deploy this server to Cloudflare Workers or run it locally for development and testing.
 
 ## Features
 
 - **SSE Endpoint:** Real-time updates via Server-Sent Events.
-- **Streamable HTTP:** Supports streamable HTTP responses.
+- **Streamable HTTP (MCP):** Supports streamable HTTP responses.
 - **Easy Deployment:** Ready for Cloudflare Workers.
 - **Local Development:** Run locally with Wrangler.
 
