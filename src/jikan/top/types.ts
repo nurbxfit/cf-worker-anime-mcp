@@ -64,6 +64,7 @@ export interface Manga {
     score?: number;
     rank?: number;
     images: { jpg: { image_url: string } };
+    synopsis?: string | null;
 }
 
 export interface Character {

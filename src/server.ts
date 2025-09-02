@@ -5,6 +5,7 @@ import AnimeTool from "./tools/anime-tool";
 import JikanMoeService from "./services/jikan-service";
 import HttpClient from "./utils/http-client";
 import { Octokit } from "octokit";
+import MangaTool from "./tools/manga-tool";
 
 class ServerMCP extends McpAgent {
     server = new McpServer({
@@ -15,7 +16,9 @@ class ServerMCP extends McpAgent {
     async init(): Promise<void> {
         // console.log('env:', this.env)
         const env = this.env as Env;
-        const animeTool = new AnimeTool(new JikanMoeService(new HttpClient(env.MYANIMELIST_API)));
+        const jikan = new JikanMoeService(new HttpClient(env.MYANIMELIST_API))
+        const animeTool = new AnimeTool(jikan);
+        const mangeTool = new MangaTool(jikan);
 
         this.server.registerTool(
             "get-top-anime-list",
@@ -27,6 +30,18 @@ class ServerMCP extends McpAgent {
                 }
             },
             (args) => animeTool.getTopAnimeList(args)
+        )
+
+        this.server.registerTool(
+            "get-top-manga-list",
+            {
+                title: "Get top mange list",
+                description: "Get list of top mange from myanimelist.net",
+                inputSchema: {
+                    limit: z.number().min(1).max(100).default(10)
+                }
+            },
+            (args) => mangeTool.getTopManga(args)
         )
 
         // Use the upstream access token to facilitate tools
