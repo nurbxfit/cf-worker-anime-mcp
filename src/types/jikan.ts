@@ -128,3 +128,5 @@ export interface Entity {
     name: string;
     url: string;
 }
+
+export type ForumFilter = 'all' | 'episode' | 'other'

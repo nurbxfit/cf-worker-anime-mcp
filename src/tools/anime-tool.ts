@@ -1,5 +1,4 @@
 import JikanMoeService from "../services/jikan-service";
-import HttpClient from "../utils/http-client";
 import { MCPTextResponse } from "../utils/mcp-helper";
 
 class AnimeTool {
@@ -8,7 +7,7 @@ class AnimeTool {
     ) { }
 
     async getTopAnimeList({ limit }: { limit: number }) {
-        const result = await this.jikanMoeService.getAnimeSearch({
+        const result = await this.jikanMoeService.anime.getSearch({
             order_by: 'rank',
             sort: 'asc',
             limit,

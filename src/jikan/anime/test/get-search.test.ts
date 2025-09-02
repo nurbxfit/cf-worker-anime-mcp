@@ -1,22 +1,20 @@
 import { describe, it, expect, vi } from 'vitest';
-import JikanMoeService from './jikan-service';
+import AnimeClient from '..';
 
-describe('JikanMoeService', () => {
+describe('AnimeClient getSearch', () => {
     it('calls HttpClient.get with correct query', async () => {
         const mockGet = vi.fn();
         const mockHttpClient = { get: mockGet };
 
-        const service = new JikanMoeService(mockHttpClient as any);
+        const client = new AnimeClient(mockHttpClient as any);
 
         const query = { q: 'Naruto', limit: 1 };
         const expectedResponse = { data: [], pagination: {} };
         mockGet.mockResolvedValueOnce(expectedResponse);
 
-        const result = await service.anime.getSearch(query);
+        const result = await client.getSearch(query);
 
         expect(mockGet).toHaveBeenCalledWith("/anime", query);
         expect(result).toBe(expectedResponse);
     });
 });
-
-

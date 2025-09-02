@@ -10,7 +10,7 @@ describe('AnimeTool.getTopAnimeList', () => {
         const service = new JikanMoeService(mockHttpClient as any);
         const animeTool = new AnimeTool(service);
 
-        const query = { limit: 10 };
+        const query = { limit: 10, order_by: "rank", sort: "asc" };
         const mockAnimeData = [
             {
                 mal_id: 1,
@@ -42,7 +42,7 @@ describe('AnimeTool.getTopAnimeList', () => {
         const result = await animeTool.getTopAnimeList(query);
 
 
-        expect(mockGet).toHaveBeenCalledWith('/anime?order_by=rank&sort=asc&limit=10');
+        expect(mockGet).toHaveBeenCalledWith('/anime', query);
         expect(result).toEqual(expectedResponse);
     })
 })
