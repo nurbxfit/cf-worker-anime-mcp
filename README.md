@@ -21,6 +21,9 @@ This repository provides a simple implementation of a MCP server using [Hono](ht
 ### MCP Request / Response
 ![MCP Request Response](./screenshots/mcp-request-response.png)
 
+### MCP Inspector
+![MCP Inspector](./screenshots/mcp-inspector.png)
+
 ## Getting Started
 
 ### 1. Install Dependencies
