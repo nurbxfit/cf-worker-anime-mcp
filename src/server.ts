@@ -18,7 +18,7 @@ class ServerMCP extends McpAgent {
         const env = this.env as Env;
         const jikan = new JikanMoeService(new HttpClient(env.MYANIMELIST_API))
         const animeTool = new AnimeTool(jikan);
-        const mangeTool = new MangaTool(jikan);
+        const mangaTool = new MangaTool(jikan);
 
         this.server.registerTool(
             "get-top-anime-list",
@@ -35,13 +35,13 @@ class ServerMCP extends McpAgent {
         this.server.registerTool(
             "get-top-manga-list",
             {
-                title: "Get top mange list",
-                description: "Get list of top mange from myanimelist.net",
+                title: "Get top manga list",
+                description: "Get list of top manga from myanimelist.net",
                 inputSchema: {
                     limit: z.number().min(1).max(100).default(10)
                 }
             },
-            (args) => mangeTool.getTopManga(args)
+            (args) => mangaTool.getTopManga(args)
         )
 
         // Use the upstream access token to facilitate tools

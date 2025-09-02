@@ -9,8 +9,8 @@ class MangaTool {
             limit
         });
 
-        const mangeList = result.data;
-        const formattedMangeList = mangeList.map((manga) => [
+        const mangaList = result.data;
+        const formattedMangaList = mangaList.map((manga) => [
             `mal_id: ${manga.mal_id}`,
             `url: ${manga.url}`,
             `title: ${manga.title}`,
@@ -19,7 +19,7 @@ class MangaTool {
             `synopsis: ${manga.synopsis}`
         ]).join('\n');
 
-        return MCPTextResponse(formattedMangeList);
+        return MCPTextResponse(formattedMangaList);
     }
 }
 
