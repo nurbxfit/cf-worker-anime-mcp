@@ -7,11 +7,9 @@ class AnimeTool {
     ) { }
 
     async getTopAnimeList({ limit }: { limit: number }) {
-        const result = await this.jikanMoeService.anime.getSearch({
-            order_by: 'rank',
-            sort: 'asc',
-            limit,
-        });
+        const result = await this.jikanMoeService.top.getAnime({
+            limit
+        })
 
         const animeList = result.data;
         const formattedAnimeList = animeList.map((anime) => [
