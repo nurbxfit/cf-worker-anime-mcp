@@ -66,11 +66,11 @@ To use this server with claude, you can add the following configuration to claud
     "mcpServers": {
         "myanime-list": {
             "type": "http",
-            "url": "https://jikan-anime-worker-mcp.nurbxfit.workers.dev/mcp",
+            "url": "https://jikan-mcp.dev.nurbxfit.com/mcp",
             "command": "npx",
             "args": [
                 "mcp-remote",
-                "https://jikan-anime-worker-mcp.nurbxfit.workers.dev/mcp"
+                "https://jikan-mcp.dev.nurbxfit.com/mcp"
             ]
         }
     }
