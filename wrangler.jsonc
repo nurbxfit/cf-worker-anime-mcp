@@ -25,6 +25,12 @@
       }
     ]
   },
+  "routes": [
+    {
+      "pattern": "jikan-mcp.dev.nurbxfit.com",
+      "custom_domain": true
+    }
+  ],
   "kv_namespaces": [
     {
       "binding": "OAUTH_KV",
